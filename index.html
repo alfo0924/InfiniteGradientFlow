@@ -3,54 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>動感互動漸層背景體驗</title>
+    <title>優化互動漸層背景</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="gradient-container">
-    <div class="gradient-circle circle-1"></div>
-    <div class="gradient-circle circle-2"></div>
-    <div class="gradient-circle circle-3"></div>
-    <div class="gradient-circle circle-4"></div>
-    <div class="gradient-circle circle-5"></div>
-    <div class="gradient-circle mouse-follower"></div>
-</div>
-
-<div class="particles-container">
-    <!-- 粒子元素會由 JS 動態生成 -->
-</div>
-
 <div class="content">
-    <h1 class="glowing-text">互動式動態漸層體驗</h1>
-    <p class="subtitle">移動滑鼠探索視覺魔法</p>
-
-    <div class="interactive-buttons">
-        <button class="glow-button" id="changeMode">切換模式</button>
-        <button class="glow-button" id="addEffect">添加效果</button>
-        <button class="glow-button" id="resetEffects">重置效果</button>
-    </div>
-
-    <div class="mouse-stats">
-        <div class="stat">
-            <span class="stat-label">X:</span>
-            <span id="mouseX" class="stat-value">0</span>
-        </div>
-        <div class="stat">
-            <span class="stat-label">Y:</span>
-            <span id="mouseY" class="stat-value">0</span>
-        </div>
-    </div>
+    <h1>互動式漸層背景</h1>
+    <p>移動您的滑鼠，觀察背景顏色的細微變化</p>
 </div>
-
-<div class="floating-elements">
-    <div class="floating-element" id="element1">✨</div>
-    <div class="floating-element" id="element2">🔮</div>
-    <div class="floating-element" id="element3">⭐</div>
-    <div class="floating-element" id="element4">💫</div>
-    <div class="floating-element" id="element5">🌟</div>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
