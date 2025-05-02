@@ -10,6 +10,7 @@ body, html {
     overflow: hidden;
     font-family: Arial, sans-serif;
     position: relative;
+    background-color: #0a0a1a; /* 深色背景增強漸層效果 */
 }
 
 #gradient-container {
@@ -28,33 +29,52 @@ body, html {
     filter: blur(80px);
     mix-blend-mode: screen;
     transition: background 0.3s ease;
+    opacity: 0.85;
 }
 
 .circle-1 {
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255, 0, 128, 0.8), rgba(255, 0, 128, 0));
+    background: radial-gradient(circle, #ff3d7f, rgba(255, 61, 127, 0));
     top: 20%;
     left: 30%;
-    animation: moveCircle1 20s infinite alternate ease-in-out;
+    animation: moveCircle1 24s infinite alternate ease-in-out;
 }
 
 .circle-2 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(0, 128, 255, 0.8), rgba(0, 128, 255, 0));
+    background: radial-gradient(circle, #3db2ff, rgba(61, 178, 255, 0));
     top: 40%;
     left: 60%;
-    animation: moveCircle2 25s infinite alternate-reverse ease-in-out;
+    animation: moveCircle2 28s infinite alternate-reverse ease-in-out;
 }
 
 .circle-3 {
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0));
+    background: radial-gradient(circle, #ffbe0b, rgba(255, 190, 11, 0));
     top: 60%;
     left: 20%;
-    animation: moveCircle3 30s infinite alternate ease-in-out;
+    animation: moveCircle3 32s infinite alternate ease-in-out;
+}
+
+.circle-4 {
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, #00f5d4, rgba(0, 245, 212, 0));
+    top: 15%;
+    left: 70%;
+    animation: moveCircle4 26s infinite alternate-reverse ease-in-out;
+}
+
+.circle-5 {
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, #fb5607, rgba(251, 86, 7, 0));
+    top: 75%;
+    left: 45%;
+    animation: moveCircle5 30s infinite alternate ease-in-out;
 }
 
 .mouse-follower {
@@ -64,11 +84,12 @@ body, html {
     transform: translate(-50%, -50%);
     transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
     will-change: transform;
+    z-index: 1;
 }
 
 .content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     color: white;
     text-align: center;
     padding-top: 20vh;
@@ -76,20 +97,30 @@ body, html {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
+    background: linear-gradient(to right, #ff3d7f, #ffbe0b, #3db2ff, #00f5d4, #fb5607);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    font-weight: bold;
 }
 
 p {
     font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 @keyframes moveCircle1 {
     0% {
         transform: translate(0, 0) rotate(0deg);
     }
+    50% {
+        transform: translate(120px, 80px) rotate(180deg) scale(1.1);
+    }
     100% {
-        transform: translate(100px, 100px) rotate(180deg);
+        transform: translate(50px, 150px) rotate(360deg) scale(0.9);
     }
 }
 
@@ -97,8 +128,11 @@ p {
     0% {
         transform: translate(0, 0) rotate(0deg);
     }
+    50% {
+        transform: translate(-150px, 50px) rotate(-180deg) scale(1.2);
+    }
     100% {
-        transform: translate(-150px, 50px) rotate(-180deg);
+        transform: translate(-80px, -100px) rotate(-360deg) scale(0.95);
     }
 }
 
@@ -106,7 +140,34 @@ p {
     0% {
         transform: translate(0, 0) rotate(0deg);
     }
+    50% {
+        transform: translate(80px, -120px) rotate(90deg) scale(0.85);
+    }
     100% {
-        transform: translate(80px, -120px) rotate(90deg);
+        transform: translate(140px, -50px) rotate(270deg) scale(1.15);
+    }
+}
+
+@keyframes moveCircle4 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(-100px, 130px) rotate(120deg) scale(1.05);
+    }
+    100% {
+        transform: translate(-60px, 70px) rotate(240deg) scale(0.9);
+    }
+}
+
+@keyframes moveCircle5 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(110px, -90px) rotate(-60deg) scale(1.1);
+    }
+    100% {
+        transform: translate(50px, -150px) rotate(-300deg) scale(0.95);
     }
 }
